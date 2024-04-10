@@ -3,14 +3,15 @@ const { NormalModuleReplacementPlugin } = require('webpack');
 
 module.exports = {
     entry: './src/index.js',
-    mode: 'development',
+    mode: 'production',
     devtool: 'source-map',
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'index.js',
-      library: 'CustomFormEditor',
-      libraryTarget: 'umd',
-      libraryExport: 'default',
+      library: {
+        type: 'module',
+      },
+      globalObject: 'this',
     },
     externals: {
       '@bpmn.io/form-js': {
@@ -65,5 +66,5 @@ module.exports = {
     ],
     experiments: {
       outputModule: true,
-    },
+    }
 };
