@@ -1,15 +1,30 @@
 {
-  "name": "custom-elements-lib",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "name": "@einarlyn/custom-form-editor",
+  "version": "0.1.0",
+  "description": "An extension library for @bpmn.io/form-js that provides custom form editor functionalities",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx webpack"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EinArlyn/custom-form-editor-lib.git"
+  },
+  "keywords": [
+    "vue",
+    "form",
+    "custom",
+    "library",
+    "form-js",
+    "form-editor",
+    "bpmn-io-extension"
+  ],
+  "author": "Aleksandr <greshnikalexm@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@bpmn-io/form-js": "^1.8.2",
     "diagram-js": "^14.3.1"
@@ -24,5 +39,8 @@
     "style-loader": "^3.3.4",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
