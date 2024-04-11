@@ -11,8 +11,6 @@ export const rangeType = 'range';
  * to render our components without the need of extra JSX transpilation.
  */
 export function RangeRenderer(props) {
-    console.info("RangeRenderer", props);
-
     // #region Constants
     const { disabled, errors = [], field, readonly, value } = props;
     const { description, range = {}, id, label } = field;

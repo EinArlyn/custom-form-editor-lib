@@ -1,24 +1,18 @@
-import { FormEditor } from '@bpmn-io/form-js';
+import { FormEditor as FE } from '@bpmn-io/form-js';
 import { RenderExtension } from './components';
 import { PropertiesPanelExtension } from './panels';
+import '@bpmn-io/form-js/dist/assets/form-js.css';
+import '@bpmn-io/form-js/dist/assets/form-js-editor.css';
 
-class CustomFormEditor {
+class FormEditor {
     constructor(options) {
-        const additionalModules = options.additionalModules || [];
-
-        this.customFormEditor = new FormEditor({
-            container: document.querySelector('#form-editor'),
-            additionalModules: [
-                ...additionalModules,
-                RenderExtension,
-                PropertiesPanelExtension,
-            ],
-        });
+        options.additionalModules = [...(options.additionalModules || []), RenderExtension, PropertiesPanelExtension];
+        this.customFormEditor = new FE(options);
     }
 
-    getEditor() {
-        return this.customFormEditor;
+    importSchema(schema) {
+        return this.customFormEditor.importSchema(schema);
     }
 }
 
-export default CustomFormEditor;
+export default FormEditor;

@@ -27,6 +27,7 @@
   ],
   "dependencies": {
     "@bpmn-io/form-js": "^1.8.2",
+    "@bpmn-io/properties-panel": "^3.18.2",
     "diagram-js": "^14.3.1"
   },
   "devDependencies": {
